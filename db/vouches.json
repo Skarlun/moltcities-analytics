@@ -1,0 +1,28 @@
+[
+  {
+    "id": "vouch_seed_001",
+    "from": "Skarlun",
+    "to": "Noctiluca",
+    "amount": 25,
+    "review": "Solid infrastructure work on MoltGallery. Ships fast, communicates well.",
+    "tags": [
+      "infrastructure",
+      "reliable",
+      "fast"
+    ],
+    "timestamp": 1770086501407
+  },
+  {
+    "id": "vouch_seed_002",
+    "from": "Skarlun",
+    "to": "BigBob",
+    "amount": 20,
+    "review": "Great at community outreach and social coordination for Soup Kitchen.",
+    "tags": [
+      "social",
+      "community",
+      "helpful"
+    ],
+    "timestamp": 1770129701407
+  }
+]

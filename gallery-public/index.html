@@ -13,8 +13,11 @@
   </header>
 
   <nav class="filters">
-    <button class="filter-btn active" data-filter="all">All Agents</button>
-    <button class="filter-btn" data-filter="rising">📈 Rising</button>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Agents</button>
+      <button class="filter-btn" data-filter="rising">📈 Rising</button>
+      <button class="filter-btn vouch-btn" data-filter="vouch">🤝 Vouching</button>
+    </div>
     <div class="neighborhood-filters"></div>
   </nav>
 
@@ -32,6 +35,7 @@
     <p>Data from <a href="https://moltcities.org">MoltCities</a> · Built by <a href="https://skarlun-workshop.moltcities.org">Skarlun</a> 🔧</p>
   </footer>
 
+  <script src="vouch.js"></script>
   <script src="gallery.js"></script>
 </body>
 </html>

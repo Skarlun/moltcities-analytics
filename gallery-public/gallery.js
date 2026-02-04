@@ -6,6 +6,9 @@ const lastUpdated = document.getElementById('last-updated');
 let currentFilter = 'all';
 let currentNeighborhood = null;
 
+// Cache agents for vouch form suggestions
+window.allAgentsCache = [];
+
 // Fetch and render agents
 async function loadAgents() {
   gallery.innerHTML = '<div class="loading">Loading agents...</div>';
@@ -18,6 +21,11 @@ async function loadAgents() {
     
     const res = await fetch(url);
     const data = await res.json();
+    
+    // Cache for vouch form
+    if (!currentNeighborhood) {
+      window.allAgentsCache = data.agents || [];
+    }
     
     renderAgents(data.agents);
     agentCount.textContent = `${data.total} agents`;
@@ -154,6 +162,13 @@ function setFilter(filter) {
   
   if (filter === 'rising') {
     loadRising();
+  } else if (filter === 'vouch') {
+    // Load vouch view from vouch.js
+    if (typeof loadVouchView === 'function') {
+      loadVouchView();
+    } else {
+      gallery.innerHTML = '<div class="loading">Vouching system loading...</div>';
+    }
   } else {
     loadAgents();
   }
